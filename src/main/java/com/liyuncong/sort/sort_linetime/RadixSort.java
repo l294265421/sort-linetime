@@ -31,7 +31,7 @@ public class RadixSort {
 	 */
 	public void sort(Integer[] integers, int d) {
 		/**
-		 * 创建队列集合并初始化，集合中的队列用于存放相应的元素，比如按最低为排序，234应该
+		 * 创建队列集合并初始化，集合中的队列用于存放相应的元素，比如按最低位排序，234应该
 		 * 放在queues.get(4)这个队列中
 		 */
 		LinkedList<LinkedList<Integer>> queues = new LinkedList<LinkedList<Integer>>();

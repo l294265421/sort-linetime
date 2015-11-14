@@ -15,17 +15,19 @@ import com.liyuncong.sort.sort_common.impl.InsertSort;
 public class BucketSort {
 	public void sort(Double[] a) {
 		int n = a.length;
+		
 		/**
 		 * 创建链表（桶）集合并初始化，集合中的链表用于存放相应的元素
 		 */
+		int bucketNum = 10; // 桶数
 		LinkedList<LinkedList<Double>> buckets = new LinkedList<LinkedList<Double>>();
-		for(int i = 0; i < n; i++){
+		for(int i = 0; i < bucketNum; i++){
 			LinkedList<Double> bucket = new LinkedList<Double>();
 			buckets.add(bucket);
 		}
 		// 把元素放进相应的桶中
 		for(int i = 0; i < n; i++){
-			int index = (int) (a[i] * n);
+			int index = (int) (a[i] * bucketNum);
 			buckets.get(index).add(a[i]);
 		}
 		// 对每个桶中的元素排序，并放进a中
